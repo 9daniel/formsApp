@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/calculadora">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Objetos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header color="secondary">
+      <ion-card-title>Dados</ion-card-title>
+    </ion-card-header>
+    <ion-item>
+      <ion-label position="fixed">Nome:</ion-label>
+      <ion-input [(ngModel)]="pessoa.nome" type="text" text-right placeholder="Ex: João"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Telefone:</ion-label>
+      <ion-input [(ngModel)]="pessoa.telefone" type="tel" text-right placeholder="Ex: (14) 9 9999-9999">
+      </ion-input>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header color="secondary">
+      <ion-card-title>EXIBIR</ion-card-title>
+    </ion-card-header>
+    <ion-item>
+      <strong>Nome:</strong> <span slot="end"><strong>{{pessoa.nome}}</strong></span>
+    </ion-item>
+    <ion-item>
+      <strong>Telefone:</strong> <span slot="end"><strong>{{pessoa.telefone}}</strong></span>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="limpar()" expand="block">Limpar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <ion-button expand="block" fill="clear" href="/lista-objetos">Lista de Objetos</ion-button>
+
+</ion-content>

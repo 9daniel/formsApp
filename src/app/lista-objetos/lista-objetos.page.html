@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>lista-objetos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header color="secondary">
+      <ion-card-title>Dados</ion-card-title>
+    </ion-card-header>
+    <ion-item>
+      <ion-label position="fixed">Nome:</ion-label>
+      <ion-input [(ngModel)]="pessoa.nome" type="text" text-right placeholder="Ex: João"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Telefone:</ion-label>
+      <ion-input [(ngModel)]="pessoa.telefone" type="tel" text-right placeholder="Ex: (14) 9 9999-9999">
+      </ion-input>
+    </ion-item>
+    <ion-button (click)="addPessoa()" expand="block">Adicionar</ion-button>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header color="secondary">
+      <ion-card-title>Resultado</ion-card-title>
+    </ion-card-header>
+
+    <p padding *ngIf="listaPessoas == 0">Não há pessoas para exibir</p>
+    <ion-item-sliding *ngFor="let item of listaPessoas">
+      <ion-item-options side="start">
+        <ion-item-option (click)="alteraPessoa(item)" color="warning">
+          <ion-icon slot="icon-only" name="create"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+      <ion-item >
+        <strong>{{item.nome}}</strong><span slot="end">{{item.telefone}}</span>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)="removePessoa(item)" color="danger">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-button *ngIf="listaPessoas != 0" (click)="limpar()" expand="block">Limpar</ion-button>
+  </ion-card>
+  
+  <ion-button expand="block" fill="clear" href="/lista-objetos">Lista de Objetos</ion-button>
+
+
+</ion-content>

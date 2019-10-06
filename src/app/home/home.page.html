@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Formulário
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input [(ngModel)]="nome" clearInput minlength="3" placeholder="Ex: João Silva"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input [(ngModel)]="email" clearInput minlength="6" placeholder="Ex: joao@email.com"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Idade:</ion-label>
+      <ion-input [(ngModel)]="idade" clearInput minlength="1" maxlength="3"></ion-input>
+    </ion-item>
+    <ion-button expand="block" (click)="exibeDados()">Salvar</ion-button>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Dados do Formulário</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Nome: </strong>{{nome}}</p>
+      <p><strong>E-mail: </strong>{{email}}</p>
+      <p><strong>Idade: </strong>{{idade}}</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="block" href="/bar">Bar do Gordo</ion-button>
+  <ion-button expand="block" href="/calculadora">Calculadora</ion-button>
+</ion-content>

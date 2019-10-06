@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bar Itens</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+    <img src="/assets/bar-ze-gordo.jpg">
+    
+    <p padding *ngIf="listaProdutos == 0">Não há produtos para exibir</p>
+   
+          <!--<strong>{{item.nomeA}}</strong><span slot="end">{{item.nome1}}</span>-->
+              
+          <ion-card>
+              <ion-item><ion-thumbnail slot="start"><img src="assets/whisky.jpg"></ion-thumbnail>
+              <ion-label>Whisky</ion-label>R$99,00</ion-item>
+              <ion-grid>
+                <ion-row>
+                  <ion-col text-center>
+                    <ion-button (click)="addWhisky()" color="warning" size="small">+</ion-button>
+                  </ion-col>
+                  <ion-col text-center> 
+                    <ion-button color="primary" size="small">{{quantWhisky}}</ion-button>
+                  </ion-col>
+                  <ion-col text-center>
+                    <ion-button (click)="tiraWhisky()"color="danger" size="small">-</ion-button>
+                  </ion-col>
+                  
+                </ion-row>
+                </ion-grid>
+              
+              <!--<ion-label class="edtItem">{{quantWhisky}}</ion-label>-->
+          </ion-card>
+
+          <ion-card>
+              <ion-item><ion-thumbnail slot="start"><img src="assets/cerveja.jpg"></ion-thumbnail>
+              <ion-label>Cerveja</ion-label>R$12,00</ion-item>
+              <ion-grid>
+                <ion-row>
+                  <ion-col text-center>
+                    <ion-button (click)="addCerveja()" color="warning" size="small">+</ion-button>
+                  </ion-col>
+                  <ion-col text-center>
+                    <ion-button color="primary" size="small">{{quantCerveja}}</ion-button>
+                  </ion-col>
+                  <ion-col text-center>
+                    <ion-button (click)="tiraCerveja()"color="danger" size="small">-</ion-button>
+                  </ion-col> 
+                </ion-row>
+                </ion-grid>  
+          </ion-card>
+
+          <ion-card>
+              <ion-item><ion-thumbnail slot="start"><img src="assets/suco.jpg"></ion-thumbnail>
+              <ion-label>Suco Natural</ion-label>R$8,00</ion-item>
+
+              <ion-grid>
+                <ion-row>
+                  <ion-col text-center>
+                    <ion-button (click)="addSuco()" color="warning" size="small">+</ion-button>
+                  </ion-col>
+                  <ion-col text-center>
+                    <ion-button color="primary" size="small">{{quantSuco}}</ion-button>
+                  </ion-col>
+                  <ion-col text-center>
+                    <ion-button (click)="tiraSuco()"color="danger" size="small">-</ion-button>
+                  </ion-col>     
+                </ion-row>
+                </ion-grid>
+            </ion-card>
+            
+            <ion-card>
+              <ion-item><ion-thumbnail slot="start"><img src="assets/ham.jpg"></ion-thumbnail>
+              <ion-label>Hamburguer</ion-label>R$9,00</ion-item>
+
+              <ion-grid>
+                <ion-row>
+                  <ion-col text-center>
+                    <ion-button (click)="addHamburgue()" color="warning" size="small">+</ion-button>
+                  </ion-col>
+                  <ion-col text-center>
+                    <ion-button color="primary" size="small">{{quantHamburguer}}</ion-button>
+                  </ion-col>
+                  <ion-col text-center>
+                    <ion-button (click)="tiraHamburgue()"color="danger" size="small">-</ion-button>
+                  </ion-col>     
+                </ion-row>
+                </ion-grid>
+            </ion-card>
+
+            <ion-card>
+              <ion-item><ion-thumbnail slot="start"><img src="assets/caipirinha.jpg"></ion-thumbnail>
+              <ion-label>Caipirinha</ion-label>R$6,00</ion-item>
+
+              <ion-grid>
+                <ion-row>
+                  <ion-col text-center>
+                    <ion-button (click)="addCaipirinha()" color="warning" size="small">+</ion-button>
+                  </ion-col>
+                  <ion-col text-center>
+                    <ion-button color="primary" size="small">{{quantCaipirinha}}</ion-button>
+                  </ion-col>
+                  <ion-col text-center>
+                    <ion-button (click)="tiraCaipirinha()"color="danger" size="small">-</ion-button>
+                  </ion-col>     
+                </ion-row>
+                </ion-grid>
+              
+            </ion-card>
+
+      <ion-item-options side="end">
+        <ion-item-option (click)="addProduto(item)" color="primary">
+          <ion-icon slot="icon-only" name="add"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    
+  
+  <ion-button expand="block" (click)="dadosCompra()">Total</ion-button>
+</ion-content>

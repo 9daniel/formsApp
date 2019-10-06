@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Calculadora</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header color="secondary">
+      <ion-card-title>Calculo</ion-card-title>
+    </ion-card-header>
+    <ion-item>
+      <ion-label position="fixed">Valor 1:</ion-label>
+      <ion-input [(ngModel)]="valor1" type="number" required text-right placeholder="0.00"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Valor 2:</ion-label>
+      <ion-input [(ngModel)]="valor2" type="number" required text-right placeholder="0.00"> </ion-input>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-button (click)="soma()" expand="block">+</ion-button>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-button (click)="subtracao()" expand="block">-</ion-button>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-button (click)="multiplicacao()" expand="block">x</ion-button>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-button (click)="divisao()" expand="block">/</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header color="secondary">
+      <ion-card-title>Resultado</ion-card-title>
+    </ion-card-header>
+    <ion-item>
+      <strong>Operação:</strong> <span slot="end"><strong>{{operacao}}</strong></span>
+    </ion-item>
+    <ion-item>
+      <strong>Resultado:</strong> <span slot="end"><strong>{{resultado}}</strong></span>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="limpar()" expand="block">Limpar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <ion-button expand="block" fill="clear" href="/objetos">Objetos</ion-button>
+</ion-content>
